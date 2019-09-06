@@ -1,10 +1,12 @@
 #pragma once
 #include "Frame.h"
 #include <vector>
+
 class Animation
 {
-	
+
 public:
+	Animation();
 	Animation(std::vector<Frame> animationFrames, bool isLooping = false);
 	Animation(std::vector<sf::IntRect> rect, float duration, bool isLooping = false);
 	virtual ~Animation();
@@ -14,7 +16,7 @@ public:
 	virtual void Update(float deltaTime);
 	//resets the animation to the initial state
 	virtual void Reset(bool isLooping = false);
-	
+
 	bool isLooping();
 	void setLoop(bool isLooping);
 private:

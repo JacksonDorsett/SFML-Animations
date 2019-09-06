@@ -5,7 +5,10 @@
 #elif !_DEBUG
 #define LOG(x) //
 #endif
+Animation::Animation()
+{
 
+}
 Animation::Animation(std::vector<Frame> animationFrames, bool isLooping) : mFrames(animationFrames), mLooping(isLooping),isPlaying(true)
 {
 	currentFrame = 0;
@@ -68,7 +71,7 @@ void Animation::updateFrame() {
 		}
 	}
 }
-void Animation::Play(bool isLooping = false)
+void Animation::Play(bool isLooping)
 {
 	mLooping = isLooping;
 	isPlaying = true;
